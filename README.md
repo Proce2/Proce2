@@ -1,28 +1,24 @@
-## Hi there 👋
+## 🚀 About My Journey
 
-I’m a developer with a background in Industrial Engineering who got into coding driven by curiosity and stayed because of all the benefits it brings — from creating tools that solve everyday problems to serving real needs in professional environments.
+I began by learning backend development and data manipulation, diving into Python to automate small daily tasks and organize information between different systems.
 
+Then I transitioned into front-end work, building responsive e-commerce interfaces to make online shopping straightforward and enjoyable, initially for my own use and personal projects.
 
-## 🚀 About Me
-
-I started with backend and data, learning the fundamentals of Python.  
-Then I got into front-end work, building e-commerce UIs to make online shopping smooth and simple.  
-Right now, I’m focusing on cloud systems and how AI agents can augment developer tasks.
-
+Today, my primary focus is on cloud automation and creating systems that seamlessly connect platforms, reducing repetitive manual work.
 
 ## 🛠 Tech Stack
 
-[![My Skills](https://skillicons.dev/icons?i=python,js,react,sql,nodejs,gcp,html,css)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=python,js,ts,java,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
+## 🌱 What I'm Actively Exploring
 
-## 🌱 Currently Exploring
-
-- Exploring AI agents and local workflows inside VS Code  
-
+- Continuously refining prompts and learning how to use AI tools effectively in day-to-day development workflows.  
+- Staying up to date with frameworks, databases, and developer tools that bring practical improvements to how we build.
 
 ## 📬 Contact
 
-- [Twitter](https://twitter.com/https://x.com/DavidJMoraesC)
+- [Twitter](https://x.com/DavidJMoraesC)
+
 
 <!--
 **Proce2/Proce2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
