@@ -1,10 +1,19 @@
+# Hi there 👋
+
+I’m a developer with a background in Industrial Engineering. My interest in code came from the interaction and the intellectual challenge that these technologies bring — especially the instant feedback you get when building things, solving problems, and seeing them come to life.  
+
+That sense of challenge, combined with my natural curiosity to understand things in detail, led me deeper into development. Over time, code became my way of creating tools that solve real-world problems — both in everyday life and in professional settings.
+
+Right now, I’m learning more about cloud systems and exploring how to use AI tools effectively — refining prompts, testing workflows, and understanding how they fit into development work.
+
 ## 🚀 About My Journey
 
 I began by learning backend development and data manipulation, diving into Python to automate small daily tasks and organize information between different systems.
 
 Then I transitioned into front-end work, building responsive e-commerce interfaces to make online shopping straightforward and enjoyable, initially for my own use and personal projects.
 
-Today, my primary focus is on cloud automation and creating systems that seamlessly connect platforms, reducing repetitive manual work.
+Later, I moved into cloud workflows, creating systems that connect platforms, automate repetitive tasks, and improve how work gets done.  
+I also stay up to date with the latest frameworks, developer tools, and databases — always looking for better ways to build.
 
 ## 🛠 Tech Stack
 
@@ -12,12 +21,13 @@ Today, my primary focus is on cloud automation and creating systems that seamles
 
 ## 🌱 What I'm Actively Exploring
 
-- Continuously refining prompts and learning how to use AI tools effectively in day-to-day development workflows.  
-- Staying up to date with frameworks, databases, and developer tools that bring practical improvements to how we build.
+- Continuously refining prompts and learning how to use AI tools effectively in day-to-day development workflows  
+- Personal and practical projects: scripts for automating bookmarks, customizing PowerShell prompts, managing downloads, and building small apps based on real needs
 
 ## 📬 Contact
 
 - [Twitter](https://x.com/DavidJMoraesC)
+
 
 
 <!--
