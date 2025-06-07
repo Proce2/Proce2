@@ -8,16 +8,16 @@ I started with backend development and data manipulation, learning Python to aut
 After that, I got into front-end development, designing responsive e-commerce interfaces that made online shopping feel smoother and easier, mostly for personal use and small-scale projects.
 Later on, I moved into cloud workflows, building systems that connect platforms, reduce repetition, and make processes more reliable.
 
-# 🛠 Tech Stack
+## Tech Stack
 
 [![My Skills](https://skillicons.dev/icons?i=python,js,ts,java,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
-# 🌱 What I'm Actively Exploring
+## What I'm Actively Exploring
 
 - I regularly follow the latest updates in frameworks, developer tools, and databases, always looking for better ways to build scalable, clean, and maintainable solutions  
 - I’m also learning how different AI tools are being used across business and development, and exploring how tools like GitHub Copilot and AI agents are integrated into environments like VS Code to help developers work more efficiently and stay focused on what matters
 
-# 📬 Contact
+## 📬 Contact
 
 - [Twitter](https://x.com/DavidJMoraesC)  
 - [LinkedIn](https://linkedin.com/in/davidjmoraes)
