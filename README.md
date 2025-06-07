@@ -14,7 +14,7 @@ Later on, I moved into cloud workflows, building systems that connect platforms,
 
 [![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
-### 🌱 What I'm Actively Exploring
+### What I'm Actively Exploring
 
 - I regularly follow the latest updates in frameworks, developer tools, and databases, always looking for better ways to build scalable, clean, and maintainable solutions  
 - I’m also learning how different AI tools are being used across business and development, and exploring how tools like GitHub Copilot and AI agents are integrated into environments like VS Code to help developers work more efficiently and stay focused on what matters
