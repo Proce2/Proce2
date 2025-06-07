@@ -12,8 +12,6 @@ Later on, I moved into cloud workflows, building systems that connect platforms,
 
 ### 🛠 Tech Stack
 
-<br>
-
 [![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
 ### 🌱 What I'm Actively Exploring
