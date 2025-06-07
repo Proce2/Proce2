@@ -5,9 +5,7 @@ I’m a developer with a background in Industrial Engineering. I’m currently w
 ## 🚀 About My Journey
 
 I started with backend development and data manipulation, learning Python to automate daily tasks and move information between systems in more efficient ways.
-
 After that, I got into front-end development, designing responsive e-commerce interfaces that made online shopping feel smoother and easier, mostly for personal use and small-scale projects.
-
 Later on, I moved into cloud workflows, building systems that connect platforms, reduce repetition, and make processes more reliable.
 
 ## 🛠 Tech Stack
@@ -21,7 +19,9 @@ Later on, I moved into cloud workflows, building systems that connect platforms,
 
 ## 📬 Contact
 
-- [Twitter](https://x.com/DavidJMoraesC)
+- [Twitter](https://x.com/DavidJMoraesC)  
+- [LinkedIn](https://linkedin.com/in/davidjmoraes)
+
 
 
 
