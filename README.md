@@ -10,7 +10,7 @@ After that, I got into front-end development, designing responsive e-commerce in
 
 Later on, I moved into cloud workflows, building systems that connect platforms, reduce repetition, and make processes more reliable.
 
-### Tech Stack
+### 🛠 Tech Stack
 
 [![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
