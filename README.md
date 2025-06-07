@@ -16,7 +16,7 @@ Later on, I moved into cloud workflows.
 
 ### 🌱 What I'm Actively Exploring
 
-- I regularly follow the latest updates in frameworks, developer tools, and databases, always looking for better ways to build scalable, clean, and maintainable solutions  
+- I regularly follow the latest updates in frameworks and developer tools, always looking for better ways to build scalable, clean, and maintainable solutions  
 - I’m also learning how different AI tools are being used across business and development, and exploring how tools like GitHub Copilot and AI agents are integrated into environments like VS Code to help developers work more efficiently and stay focused on what matters
 
 ### 📬 Contact
