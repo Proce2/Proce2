@@ -16,8 +16,6 @@ Later on, I moved into cloud workflows, building systems that connect platforms,
 
 [![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
-<br>
-
 ### What I'm Actively Exploring
 
 - I regularly follow the latest updates in frameworks, developer tools, and databases, always looking for better ways to build scalable, clean, and maintainable solutions  
