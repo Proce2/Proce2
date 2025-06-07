@@ -8,7 +8,7 @@ I started with backend development and data manipulation, learning Python to aut
 
 After that, I got into front-end development, designing responsive e-commerce interfaces that made online shopping feel smoother and easier, mostly for personal use and small-scale projects.
 
-Later on, I moved into cloud workflows, building systems that connect platforms, reduce repetition, and make processes more reliable.
+Later on, I moved into cloud workflows.
 
 ### 🛠 Tech Stack
 
