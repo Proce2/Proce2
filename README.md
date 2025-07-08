@@ -1,25 +1,24 @@
-#### Hi there 👋
+##### Hi there 👋
 
-I’m a developer with a background in Industrial Engineering. I’m currently working with cloud technologies, and in my free time, I enjoy building small tools that help with real-world tasks—like automating bookmarks, customizing PowerShell prompts, organizing files, or creating location-aware apps based on needs I run into.
+I'm a software engineer with a background in Industrial Engineering. I work across a variety of tech tools. I enjoy building small tools that improve my day-to-day tasks and the way I work.
 
-#### 🚀 About My Journey
+##### 🚀 About My Journey
 
-I started with backend development and data manipulation, learning Python to automate daily tasks and move information between systems in more efficient ways.
+I started with curiosity. I wanted to deeply understand how code works. That interest led me into programming fundamentals and the underlying logic at every level.
 
-After that, I got into front-end development, designing responsive e-commerce interfaces that made online shopping feel smoother and easier, mostly for personal use and small-scale projects.
+Later, I had a project where I worked with backend systems, which in turn helped me see this side of software development more clearly in a professional setting.
 
-Later on, I moved into cloud workflows.
+More recently, I’ve been applying what I’ve learned in areas related to interfaces and data handling.
 
-#### 🛠 Tech Stack
+##### 🛠 Tech Stack
 
 [![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
-#### 🌱 What I'm Actively Exploring
+##### 🌱 What I'm Actively Exploring
 
-- I regularly follow the latest updates in frameworks and developer tools, always looking for better ways to build scalable, clean, and maintainable solutions  
-- I’m also learning how different AI tools are being used across business and development, and exploring how tools like GitHub Copilot and AI agents are integrated into environments like VS Code to help developers work more efficiently and stay focused on what matters
+I follow the latest updates in frameworks and developer tools that help me improve the way I work. I'm exploring how AI and agents are changing the developer experience in how software is built, maintained, and delivered.
 
-#### 📬 Contact
+##### 📬 Contact
 
 - [Twitter](https://x.com/DavidJMoraesC)  
 - [LinkedIn](https://linkedin.com/in/davidjmoraes)
