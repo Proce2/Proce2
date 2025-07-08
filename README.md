@@ -1,4 +1,4 @@
-I'm a software engineer with a background in Industrial Engineering. I work across a variety of tech tools. I enjoy building small tools that improve my day-to-day tasks and the way I work.
+Hello 👋, I'm a software engineer with a background in Industrial Engineering. I work across a variety of tech tools. I enjoy building small tools that improve my day-to-day tasks and the way I work.
 
 #### 🚀 About My Journey
 
