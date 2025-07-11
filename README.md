@@ -10,7 +10,7 @@ I'm a software engineer with a background in Industrial Engineering. I've had th
 
 ### 🛠 Tools I use
 
-[My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
+![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)
 
 ### 🌱 Currently Exploring
 
