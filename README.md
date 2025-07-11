@@ -1,26 +1,21 @@
-Hello 👋, I'm a software engineer with a background in Industrial Engineering. I work across a variety of tech tools. I enjoy building small tools that improve my day-to-day tasks and the way I work.
+# 🧑‍💻 David Moraes
 
-#### 🚀 About My Journey
+I'm a software engineer with a background in Industrial Engineering. I've had the chance to work in different areas of software development across small and mid-sized companies, which helped me explore a variety of tools and workflows.
 
-I started with curiosity. I wanted to deeply understand how code works. That interest led me into programming fundamentals and the underlying logic at every level.
+### 🚀 About Me
 
-Later, I had a project where I worked with backend systems, which in turn helped me see this side of software development more clearly in a professional setting.
+* 🧰 I enjoy building tools that improve how I work and help with daily tasks
+* 🔍 I'm driven by curiosity. I like understanding how code works at a deep level and how everything fits together
+* 🧑‍🔧 I’ve worked on frontend and backend development using both code and no-code tools
 
-More recently, I’ve been applying what I’ve learned in areas related to interfaces and data handling.
+### 🛠 Tools I use
 
-#### 🛠 Tech Stack
+[My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
 
-[![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)](https://skillicons.dev)
+### 🌱 Currently Exploring
 
-#### 🌱 What I'm Actively Exploring
-
-I follow the latest updates in frameworks and developer tools that help me improve the way I work. I'm exploring how AI and agents are changing the developer experience in how software is built, maintained, and delivered.
-
-#### 📬 Contact
-
-- [Twitter](https://x.com/DavidJMoraesC)  
-- [LinkedIn](https://linkedin.com/in/davidjmoraes)
-
+* I follow the latest updates in frameworks and developer tools that help me improve the way I work
+* I'm exploring how AI and agents are changing the developer experience in how software is built
 
 
 
