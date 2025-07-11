@@ -14,8 +14,8 @@ I'm a software engineer with a background in Industrial Engineering. I've had th
 
 ### 🌱 Currently Exploring
 
-* I follow the latest updates in frameworks and developer tools that help me improve the way I work
-* I'm exploring how AI and agents are changing the developer experience in how software is built
+* I follow the latest updates in frameworks and developer tools that help me improve the way I work.
+* I'm exploring how AI and agents are changing the developer experience in how software is built.
 
 
 
