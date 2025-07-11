@@ -6,6 +6,7 @@ I'm a software engineer with a background in Industrial Engineering. I've had th
 
 * I enjoy building tools that improve how I work and help with daily tasks.
 * I'm driven by curiosity. I like understanding how code works at a deep level and how everything fits together.
+* I’ve worked across frontend and backend development, focusing on interfaces, data workflows, and API integrations using both code and no-code tools.
 
 ### 🛠 Tools I use
 
