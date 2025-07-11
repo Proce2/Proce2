@@ -10,9 +10,7 @@ I'm a software engineer with a background in Industrial Engineering. I've had th
 
 ### 🛠 Tools I use
 
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure" alt="Tech Stack" />
-</p>
+![My Skills](https://skillicons.dev/icons?i=python,js,ts,react,nodejs,html,css,gcp,aws,azure)
 
 ### 🌱 Currently Exploring
 
