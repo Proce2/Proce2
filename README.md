@@ -1,4 +1,3 @@
-# 🧑‍💻 David J. 
 
 I'm a software engineer with a background in Industrial Engineering. I've had the chance to work in different areas of software development across small and mid-sized companies, which helped me explore a variety of tools and workflows.
 
