@@ -88,9 +88,10 @@ class TestDependabotAlertsChecker(unittest.TestCase):
     @patch('check_dependabot_alerts.requests.get')
     def test_get_dependabot_alerts_success(self, mock_get):
         """Test fetching Dependabot alerts successfully."""
-        mock_response = MagicMock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = [
+        # First page with data
+        first_response = MagicMock()
+        first_response.status_code = 200
+        first_response.json.return_value = [
             {
                 "number": 1,
                 "security_advisory": {
@@ -102,12 +103,49 @@ class TestDependabotAlertsChecker(unittest.TestCase):
                 "html_url": "https://github.com/owner/repo/security/dependabot/1"
             }
         ]
-        mock_get.return_value = mock_response
+        
+        # Second page (empty)
+        second_response = MagicMock()
+        second_response.status_code = 200
+        second_response.json.return_value = []
+        
+        mock_get.side_effect = [first_response, second_response]
         
         alerts = check_dependabot_alerts.get_dependabot_alerts("owner", "repo", "token")
         
         self.assertEqual(len(alerts), 1)
         self.assertEqual(alerts[0]["security_advisory"]["severity"], "high")
+    
+    @patch('check_dependabot_alerts.requests.get')
+    def test_get_dependabot_alerts_pagination(self, mock_get):
+        """Test pagination of Dependabot alerts."""
+        # First page with 100 alerts
+        first_response = MagicMock()
+        first_response.status_code = 200
+        first_response.json.return_value = [
+            {
+                "number": i,
+                "security_advisory": {
+                    "severity": "high",
+                    "summary": f"Test vulnerability {i}",
+                    "cve_id": f"CVE-2024-{i}",
+                    "package": {"name": "test-package"}
+                },
+                "html_url": f"https://github.com/owner/repo/security/dependabot/{i}"
+            } for i in range(1, 101)
+        ]
+        
+        # Second page (empty)
+        second_response = MagicMock()
+        second_response.status_code = 200
+        second_response.json.return_value = []
+        
+        mock_get.side_effect = [first_response, second_response]
+        
+        alerts = check_dependabot_alerts.get_dependabot_alerts("owner", "repo", "token")
+        
+        self.assertEqual(len(alerts), 100)
+        self.assertEqual(mock_get.call_count, 2)
     
     @patch('check_dependabot_alerts.requests.get')
     def test_get_dependabot_alerts_not_found(self, mock_get):

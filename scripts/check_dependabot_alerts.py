@@ -16,7 +16,7 @@ def get_repositories(owner: str, token: str) -> List[Dict[str, Any]]:
     per_page = 100
     
     headers = {
-        "Authorization": f"token {token}",
+        "Authorization": f"Bearer {token}",
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28"
     }
@@ -43,29 +43,41 @@ def get_repositories(owner: str, token: str) -> List[Dict[str, Any]]:
 
 
 def get_dependabot_alerts(owner: str, repo: str, token: str) -> List[Dict[str, Any]]:
-    """Fetch Dependabot alerts for a specific repository."""
+    """Fetch Dependabot alerts for a specific repository with pagination."""
     headers = {
-        "Authorization": f"token {token}",
+        "Authorization": f"Bearer {token}",
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28"
     }
     
-    url = f"https://api.github.com/repos/{owner}/{repo}/dependabot/alerts"
-    params = {"state": "open", "per_page": 100}
+    alerts = []
+    page = 1
+    per_page = 100
     
-    response = requests.get(url, headers=headers, params=params)
+    while True:
+        url = f"https://api.github.com/repos/{owner}/{repo}/dependabot/alerts"
+        params = {"state": "open", "per_page": per_page, "page": page}
+        
+        response = requests.get(url, headers=headers, params=params)
+        
+        if response.status_code == 404:
+            # Dependabot not enabled or no access
+            return alerts
+        elif response.status_code == 403:
+            # Access forbidden
+            return alerts
+        elif response.status_code != 200:
+            print(f"  Error fetching alerts for {repo}: {response.status_code}")
+            return alerts
+        
+        batch = response.json()
+        if not batch:
+            break
+        
+        alerts.extend(batch)
+        page += 1
     
-    if response.status_code == 404:
-        # Dependabot not enabled or no access
-        return []
-    elif response.status_code == 403:
-        # Access forbidden
-        return []
-    elif response.status_code != 200:
-        print(f"  Error fetching alerts for {repo}: {response.status_code}")
-        return []
-    
-    return response.json()
+    return alerts
 
 
 def format_severity_badge(severity: str) -> str:
