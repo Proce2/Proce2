@@ -42,8 +42,15 @@ def get_repositories(owner: str, token: str) -> List[Dict[str, Any]]:
     return repos
 
 
-def get_dependabot_alerts(owner: str, repo: str, token: str) -> List[Dict[str, Any]]:
-    """Fetch Dependabot alerts for a specific repository with pagination."""
+def get_dependabot_alerts(owner: str, repo: str, token: str, state: str = "open") -> List[Dict[str, Any]]:
+    """Fetch Dependabot alerts for a specific repository with pagination.
+    
+    Args:
+        owner: Repository owner
+        repo: Repository name
+        token: GitHub API token
+        state: Alert state filter (open, dismissed, fixed, or all)
+    """
     headers = {
         "Authorization": f"Bearer {token}",
         "Accept": "application/vnd.github+json",
@@ -56,7 +63,7 @@ def get_dependabot_alerts(owner: str, repo: str, token: str) -> List[Dict[str, A
     
     while True:
         url = f"https://api.github.com/repos/{owner}/{repo}/dependabot/alerts"
-        params = {"state": "open", "per_page": per_page, "page": page}
+        params = {"state": state, "per_page": per_page, "page": page}
         
         response = requests.get(url, headers=headers, params=params)
         
@@ -94,6 +101,7 @@ def format_severity_badge(severity: str) -> str:
 def main():
     token = os.environ.get("GITHUB_TOKEN")
     owner = os.environ.get("GITHUB_OWNER")
+    alert_state = os.environ.get("ALERT_STATE", "open")  # Default to open alerts
     
     if not token:
         print("Error: GITHUB_TOKEN environment variable not set")
@@ -103,7 +111,8 @@ def main():
         print("Error: GITHUB_OWNER environment variable not set")
         sys.exit(1)
     
-    print(f"🔍 Checking Dependabot alerts for all repositories owned by {owner}\n")
+    print(f"🔍 Checking Dependabot alerts for all repositories owned by {owner}")
+    print(f"   Alert state filter: {alert_state}\n")
     print("=" * 80)
     
     # Fetch all repositories
@@ -125,7 +134,7 @@ def main():
         repo_name = repo["name"]
         repo_full_name = repo["full_name"]
         
-        alerts = get_dependabot_alerts(owner, repo_name, token)
+        alerts = get_dependabot_alerts(owner, repo_name, token, alert_state)
         
         if alerts:
             repos_with_alerts += 1
@@ -133,7 +142,7 @@ def main():
             
             print(f"\n📦 Repository: {repo_full_name}")
             print(f"   URL: {repo['html_url']}")
-            print(f"   Alerts: {len(alerts)} open")
+            print(f"   Alerts: {len(alerts)} {alert_state}")
             print("   " + "-" * 70)
             
             for alert in alerts:
@@ -144,13 +153,28 @@ def main():
                 summary = alert["security_advisory"]["summary"]
                 cve_id = alert["security_advisory"]["cve_id"]
                 html_url = alert["html_url"]
+                state = alert.get("state", "unknown")
                 
-                print(f"   {format_severity_badge(severity)}")
+                print(f"   {format_severity_badge(severity)} [{state.upper()}]")
                 print(f"   Package: {package}")
                 print(f"   Summary: {summary}")
                 if cve_id:
                     print(f"   CVE: {cve_id}")
                 print(f"   Details: {html_url}")
+                
+                # Show dismissal information if alert is dismissed
+                if state == "dismissed":
+                    dismissed_reason = alert.get("dismissed_reason")
+                    dismissed_comment = alert.get("dismissed_comment")
+                    dismissed_by = alert.get("dismissed_by", {}).get("login", "Unknown")
+                    dismissed_at = alert.get("dismissed_at", "Unknown")
+                    
+                    print(f"   📝 Dismissed by: {dismissed_by} at {dismissed_at}")
+                    if dismissed_reason:
+                        print(f"   📝 Reason: {dismissed_reason}")
+                    if dismissed_comment:
+                        print(f"   💬 Comment: {dismissed_comment}")
+                
                 print()
     
     # Print summary
@@ -159,7 +183,7 @@ def main():
     print("=" * 80)
     print(f"Total repositories scanned: {len(repos)}")
     print(f"Repositories with alerts: {repos_with_alerts}")
-    print(f"Total open alerts: {total_alerts}")
+    print(f"Total {alert_state} alerts: {total_alerts}")
     
     if total_alerts > 0:
         print("\nAlerts by severity:")
@@ -172,10 +196,13 @@ def main():
         if severity_count["low"] > 0:
             print(f"  🟢 Low: {severity_count['low']}")
         
-        print("\n⚠️  Please review and address these security alerts!")
-        sys.exit(1)
+        if alert_state == "open":
+            print("\n⚠️  Please review and address these security alerts!")
+            sys.exit(1)
+        else:
+            sys.exit(0)
     else:
-        print("\n✅ No open Dependabot alerts found!")
+        print(f"\n✅ No {alert_state} Dependabot alerts found!")
         sys.exit(0)
 
 

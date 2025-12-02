@@ -94,6 +94,7 @@ class TestDependabotAlertsChecker(unittest.TestCase):
         first_response.json.return_value = [
             {
                 "number": 1,
+                "state": "open",
                 "security_advisory": {
                     "severity": "high",
                     "summary": "Test vulnerability",
@@ -115,6 +116,43 @@ class TestDependabotAlertsChecker(unittest.TestCase):
         
         self.assertEqual(len(alerts), 1)
         self.assertEqual(alerts[0]["security_advisory"]["severity"], "high")
+        self.assertEqual(alerts[0]["state"], "open")
+    
+    @patch('check_dependabot_alerts.requests.get')
+    def test_get_dependabot_alerts_with_state_filter(self, mock_get):
+        """Test fetching Dependabot alerts with state filter."""
+        # First page with data
+        first_response = MagicMock()
+        first_response.status_code = 200
+        first_response.json.return_value = [
+            {
+                "number": 1,
+                "state": "dismissed",
+                "dismissed_reason": "tolerable_risk",
+                "dismissed_comment": "Not applicable to our use case",
+                "security_advisory": {
+                    "severity": "medium",
+                    "summary": "Test vulnerability",
+                    "cve_id": "CVE-2024-5678",
+                    "package": {"name": "test-package"}
+                },
+                "html_url": "https://github.com/owner/repo/security/dependabot/1"
+            }
+        ]
+        
+        # Second page (empty)
+        second_response = MagicMock()
+        second_response.status_code = 200
+        second_response.json.return_value = []
+        
+        mock_get.side_effect = [first_response, second_response]
+        
+        alerts = check_dependabot_alerts.get_dependabot_alerts("owner", "repo", "token", "dismissed")
+        
+        self.assertEqual(len(alerts), 1)
+        self.assertEqual(alerts[0]["state"], "dismissed")
+        self.assertEqual(alerts[0]["dismissed_reason"], "tolerable_risk")
+        self.assertEqual(alerts[0]["dismissed_comment"], "Not applicable to our use case")
     
     @patch('check_dependabot_alerts.requests.get')
     def test_get_dependabot_alerts_pagination(self, mock_get):

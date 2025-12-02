@@ -4,7 +4,8 @@ This repository includes a GitHub Action workflow and Python script to check Dep
 
 ## Features
 
-- 🔍 Scans all repositories for open Dependabot alerts
+- 🔍 Scans all repositories for Dependabot alerts (open, dismissed, fixed, or all)
+- 💬 Shows dismissal comments and reasons for dismissed alerts
 - 📊 Provides a summary of alerts by severity (Critical, High, Medium, Low)
 - 🤖 Can be run automatically on a schedule or manually triggered
 - 📦 Easy to use and understand output
@@ -17,16 +18,18 @@ The solution consists of two main components:
 
 This workflow:
 - Runs daily at 9 AM UTC (configurable via cron schedule)
-- Can be manually triggered via workflow_dispatch
+- Can be manually triggered via workflow_dispatch with optional alert state filter
 - Uses the repository's GITHUB_TOKEN to authenticate
 - Scans all repositories owned by the repository owner
+- Supports filtering by alert state: open, dismissed, fixed, or all
 
 ### 2. Python Script (`scripts/check_dependabot_alerts.py`)
 
 This script:
 - Fetches all repositories for the specified owner
-- Checks each repository for open Dependabot alerts
+- Checks each repository for Dependabot alerts (state configurable via ALERT_STATE env var)
 - Displays alerts with severity levels, package names, and CVE information
+- Shows dismissal information including comments, reason, who dismissed, and when
 - Provides a summary of total alerts by severity
 
 ## Usage
@@ -36,7 +39,8 @@ This script:
 1. Go to the **Actions** tab in your repository
 2. Select **Check Dependabot Alerts** workflow
 3. Click **Run workflow**
-4. Select the branch and click **Run workflow**
+4. Select the alert state to check (open, dismissed, fixed, or all)
+5. Click **Run workflow**
 
 ### Running the Script Locally
 
@@ -49,6 +53,9 @@ pip install requests
 # Set environment variables
 export GITHUB_TOKEN=your_personal_access_token
 export GITHUB_OWNER=Proce2
+
+# Optional: Set alert state (default is "open")
+export ALERT_STATE=all  # Options: open, dismissed, fixed, all
 
 # Run the script
 python scripts/check_dependabot_alerts.py
@@ -73,6 +80,7 @@ python scripts/check_dependabot_alerts.py
 
 ```
 🔍 Checking Dependabot alerts for all repositories owned by Proce2
+   Alert state filter: all
 
 ================================================================================
 
@@ -80,20 +88,29 @@ Found 8 repositories
 
 📦 Repository: Proce2/android-App
    URL: https://github.com/Proce2/android-App
-   Alerts: 3 open
+   Alerts: 2 all
    ----------------------------------------------------------------------
-   🔴 CRITICAL
-   Package: example-vulnerable-package
-   Summary: Critical vulnerability in example package
+   🔴 CRITICAL [OPEN]
+   Package: lodash
+   Summary: Prototype pollution vulnerability
    CVE: CVE-2024-1234
    Details: https://github.com/Proce2/android-App/security/dependabot/1
+
+   🟠 HIGH [DISMISSED]
+   Package: axios
+   Summary: Server-Side Request Forgery in axios
+   CVE: CVE-2024-5678
+   Details: https://github.com/Proce2/android-App/security/dependabot/2
+   📝 Dismissed by: Proce2 at 2024-11-15T10:30:00Z
+   📝 Reason: tolerable_risk
+   💬 Comment: This package is only used in dev environment and not exposed in production
 
 ================================================================================
 📊 SUMMARY
 ================================================================================
 Total repositories scanned: 8
 Repositories with alerts: 2
-Total open alerts: 5
+Total all alerts: 5
 
 Alerts by severity:
   🔴 Critical: 2
@@ -117,10 +134,19 @@ schedule:
 
 ### Filter Alert States
 
-By default, the script only checks for `open` alerts. You can modify the script to include other states like `dismissed` or `fixed` by editing the `params` in the `get_dependabot_alerts` function:
+The workflow supports filtering alerts by state:
+- **open**: Only open/active alerts (default for scheduled runs)
+- **dismissed**: Only dismissed alerts with reasons and comments
+- **fixed**: Only fixed alerts
+- **all**: All alerts regardless of state
 
-```python
-params = {"state": "all", "per_page": 100}  # Check all states
+When running manually via GitHub Actions, you can select the alert state from the dropdown menu.
+
+When running locally, set the `ALERT_STATE` environment variable:
+
+```bash
+export ALERT_STATE=dismissed  # To see dismissed alerts with comments
+python scripts/check_dependabot_alerts.py
 ```
 
 ## Permissions
