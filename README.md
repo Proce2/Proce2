@@ -16,6 +16,11 @@ I'm a software engineer with a background in Industrial Engineering. I've had th
 * I follow the latest updates in frameworks and developer tools that help me improve the way I work.
 * I'm exploring how AI and agents are changing the developer experience in how software is built.
 
+### 🔒 Security Tools
+
+This repository includes automated tools for monitoring security:
+* **Dependabot Alerts Checker** - Automated monitoring of Dependabot alerts across all repositories. [Learn more](./DEPENDABOT_CHECKER.md)
+
 
 <!--
 **Proce2/Proce2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
